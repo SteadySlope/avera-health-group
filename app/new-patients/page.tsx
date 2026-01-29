@@ -64,15 +64,15 @@ export default function NewPatientsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-pink-100 via-rose-50 to-pink-50 py-20 lg:py-28">
-        <div className="absolute left-0 bottom-0 h-96 w-96 -translate-x-1/2 translate-y-1/2 rounded-full bg-pink-200/30 blur-3xl" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-sage-50 via-cream-50 to-rose-50 py-20 lg:py-28">
+        <div className="absolute left-0 bottom-0 h-96 w-96 -translate-x-1/2 translate-y-1/2 rounded-full bg-sage-200/30 blur-3xl" />
         <div className="container relative">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-4 font-script text-2xl text-pink-500">Welcome</p>
-            <h1 className="mb-6 font-heading text-5xl font-bold text-gray-800 md:text-6xl">
-              New Patient <span className="text-pink-600">Information</span>
+            <p className="mb-4 font-script text-2xl text-sage-600">Welcome</p>
+            <h1 className="mb-6 font-heading text-5xl font-bold text-warm-800 md:text-6xl">
+              New Patient <span className="text-sage-600">Information</span>
             </h1>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-warm-600">
               We&apos;re excited to welcome you to our practice. Here&apos;s everything
               you need to know about becoming a patient.
             </p>
@@ -84,8 +84,8 @@ export default function NewPatientsPage() {
       <section className="bg-white py-20 lg:py-28">
         <div className="container">
           <div className="mb-12 text-center">
-            <p className="mb-3 font-script text-2xl text-pink-500">Getting Started</p>
-            <h2 className="font-heading text-4xl font-bold text-gray-800">
+            <p className="mb-3 font-script text-2xl text-sage-600">Getting Started</p>
+            <h2 className="font-heading text-4xl font-bold text-warm-800">
               How to Become a Patient
             </h2>
           </div>
@@ -93,19 +93,19 @@ export default function NewPatientsPage() {
             {steps.map((step) => (
               <div
                 key={step.number}
-                className="rounded-2xl bg-gradient-to-br from-pink-50 to-rose-50 p-6 shadow-lg"
+                className="rounded-2xl bg-gradient-to-br from-sage-50 to-cream-50 p-6 shadow-lg"
               >
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-pink-500 to-rose-500 text-xl font-bold text-white">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-sage-500 to-sage-600 text-xl font-bold text-white">
                   {step.number}
                 </div>
-                <h3 className="mb-2 font-semibold text-gray-800">{step.title}</h3>
-                <p className="text-sm text-gray-600">{step.description}</p>
+                <h3 className="mb-2 font-semibold text-warm-800">{step.title}</h3>
+                <p className="text-sm text-warm-600">{step.description}</p>
               </div>
             ))}
           </div>
           <div className="mt-10 text-center">
             <Link href="/book">
-              <Button className="rounded-full bg-gradient-to-r from-pink-500 to-rose-500 px-10 py-6 text-lg font-medium shadow-lg shadow-pink-200 transition-all hover:scale-105">
+              <Button className="rounded-full bg-gradient-to-r from-sage-500 to-sage-600 px-10 py-6 text-lg font-medium shadow-lg shadow-sage-200 transition-all hover:scale-105">
                 <Calendar className="mr-2 h-5 w-5" />
                 Schedule Your Consultation
               </Button>
@@ -115,15 +115,15 @@ export default function NewPatientsPage() {
       </section>
 
       {/* What to Expect */}
-      <section className="bg-gradient-to-br from-pink-50 to-rose-50 py-20 lg:py-28">
+      <section className="bg-gradient-to-br from-cream-50 to-sage-50 py-20 lg:py-28">
         <div className="container">
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
-              <p className="mb-3 font-script text-2xl text-pink-500">Your First Visit</p>
-              <h2 className="mb-6 font-heading text-4xl font-bold text-gray-800">
+              <p className="mb-3 font-script text-2xl text-sage-600">Your First Visit</p>
+              <h2 className="mb-6 font-heading text-4xl font-bold text-warm-800">
                 What to Expect
               </h2>
-              <p className="mb-8 text-gray-600">
+              <p className="mb-8 text-warm-600">
                 Your initial consultation is an extended visit (usually 45-60
                 minutes) designed to help us understand your complete health
                 picture and establish a relationship built on trust.
@@ -134,7 +134,7 @@ export default function NewPatientsPage() {
                     icon: Clock,
                     title: "Extended Time",
                     description:
-                      "No rushing—we take time to listen and understand your needs.",
+                      "No rushing -we take time to listen and understand your needs.",
                   },
                   {
                     icon: Clipboard,
@@ -150,12 +150,12 @@ export default function NewPatientsPage() {
                   },
                 ].map((item) => (
                   <div key={item.title} className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-pink-400 to-rose-400">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-sage-400 to-sage-500">
                       <item.icon className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-800">{item.title}</h3>
-                      <p className="text-sm text-gray-600">{item.description}</p>
+                      <h3 className="font-semibold text-warm-800">{item.title}</h3>
+                      <p className="text-sm text-warm-600">{item.description}</p>
                     </div>
                   </div>
                 ))}
@@ -163,21 +163,21 @@ export default function NewPatientsPage() {
             </div>
             <div className="space-y-6">
               <div className="rounded-3xl bg-white p-8 shadow-xl">
-                <h3 className="mb-4 font-heading text-xl font-bold text-gray-800">
+                <h3 className="mb-4 font-heading text-xl font-bold text-warm-800">
                   What to Bring
                 </h3>
                 <ul className="space-y-3">
                   {bringItems.map((item, index) => (
                     <li key={index} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 shrink-0 text-pink-500" />
-                      <span className="text-gray-700">{item}</span>
+                      <CheckCircle className="h-5 w-5 shrink-0 text-sage-500" />
+                      <span className="text-warm-700">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="rounded-3xl bg-gradient-to-r from-pink-500 to-rose-500 p-8 text-white shadow-xl">
+              <div className="rounded-3xl bg-gradient-to-r from-sage-500 to-sage-600 p-8 text-white shadow-xl">
                 <h3 className="mb-2 font-semibold">Forms & Paperwork</h3>
-                <p className="mb-4 text-sm text-pink-100">
+                <p className="mb-4 text-sm text-sage-100">
                   After scheduling, we&apos;ll send you new patient forms to
                   complete before your visit. This helps us make the most of
                   our time together.
@@ -202,8 +202,8 @@ export default function NewPatientsPage() {
         <div className="container">
           <div className="mx-auto max-w-3xl">
             <div className="mb-12 text-center">
-              <p className="mb-3 font-script text-2xl text-pink-500">Questions?</p>
-              <h2 className="font-heading text-4xl font-bold text-gray-800">
+              <p className="mb-3 font-script text-2xl text-sage-600">Questions?</p>
+              <h2 className="font-heading text-4xl font-bold text-warm-800">
                 Common New Patient Questions
               </h2>
             </div>
@@ -228,10 +228,10 @@ export default function NewPatientsPage() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="rounded-2xl bg-gradient-to-br from-pink-50 to-rose-50 p-6 shadow-lg"
+                  className="rounded-2xl bg-gradient-to-br from-sage-50 to-cream-50 p-6 shadow-lg"
                 >
-                  <h3 className="mb-2 font-semibold text-gray-800">{item.q}</h3>
-                  <p className="text-sm text-gray-600">{item.a}</p>
+                  <h3 className="mb-2 font-semibold text-warm-800">{item.q}</h3>
+                  <p className="text-sm text-warm-600">{item.a}</p>
                 </div>
               ))}
             </div>
@@ -239,7 +239,7 @@ export default function NewPatientsPage() {
               <Link href="/faqs">
                 <Button
                   variant="outline"
-                  className="rounded-full border-2 border-pink-300 px-8 py-6 text-pink-600 hover:bg-pink-50"
+                  className="rounded-full border-2 border-sage-300 px-8 py-6 text-sage-700 hover:bg-sage-50"
                 >
                   View All FAQs
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -251,12 +251,12 @@ export default function NewPatientsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-pink-500 via-rose-500 to-pink-500 py-20 text-white">
+      <section className="bg-gradient-to-r from-sage-500 via-sage-600 to-sage-500 py-20 text-white">
         <div className="container text-center">
           <h2 className="mb-6 font-heading text-4xl font-bold">
             Ready to Get Started?
           </h2>
-          <p className="mx-auto mb-10 max-w-2xl text-pink-100">
+          <p className="mx-auto mb-10 max-w-2xl text-sage-100">
             Schedule your consultation today and take the first step toward
             healthcare that&apos;s designed around you.
           </p>
@@ -264,7 +264,7 @@ export default function NewPatientsPage() {
             <Link href="/book">
               <Button
                 size="lg"
-                className="rounded-full bg-white px-10 py-6 text-lg font-medium text-pink-600 transition-all hover:scale-105"
+                className="rounded-full bg-white px-10 py-6 text-lg font-medium text-sage-700 transition-all hover:scale-105"
               >
                 <Calendar className="mr-2 h-5 w-5" />
                 Book a Consultation
@@ -274,7 +274,7 @@ export default function NewPatientsPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-full border-2 border-white bg-white/10 px-10 py-6 text-lg text-white hover:bg-white hover:text-pink-600"
+                className="rounded-full border-2 border-white bg-white/10 px-10 py-6 text-lg text-white hover:bg-white hover:text-sage-700"
               >
                 <Phone className="mr-2 h-5 w-5" />
                 Call {company.phoneFormatted}

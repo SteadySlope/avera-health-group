@@ -1,9 +1,9 @@
 export const company = {
-  name: "Avera Health Group",
+  name: "Averra Medical Group",
   tagline: "Healthcare Designed Around You",
   phone: "706-319-2228",
   phoneFormatted: "(706) 319-2228",
-  email: "info@averahealthgroup.com",
+  email: "info@averramedicalgroup.com",
 
   // Service areas
   serviceAreas: ["Newton County", "Rockdale County"],
@@ -86,7 +86,7 @@ export const company = {
       },
       {
         title: "Transparent Pricing",
-        description: "Know exactly what you pay—no surprise bills",
+        description: "Know exactly what you pay -no surprise bills",
       },
       {
         title: "Same-Day Appointments",

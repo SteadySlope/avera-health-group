@@ -10,14 +10,14 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-pink-100 via-rose-50 to-pink-50 py-20 lg:py-28">
-        <div className="absolute right-0 bottom-0 h-96 w-96 translate-x-1/2 translate-y-1/2 rounded-full bg-pink-200/30 blur-3xl" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-sage-50 via-cream-50 to-rose-50 py-20 lg:py-28">
+        <div className="absolute right-0 bottom-0 h-96 w-96 translate-x-1/2 translate-y-1/2 rounded-full bg-sage-200/30 blur-3xl" />
         <div className="container relative">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 font-heading text-5xl font-bold text-gray-800 md:text-6xl">
+            <h1 className="mb-6 font-heading text-5xl font-bold text-warm-800 md:text-6xl">
               Privacy Policy
             </h1>
-            <p className="text-gray-600">
+            <p className="text-warm-600">
               Last updated: {new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
             </p>
           </div>
@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
       {/* Content */}
       <section className="bg-white py-20 lg:py-28">
         <div className="container">
-          <div className="prose prose-pink mx-auto max-w-3xl prose-headings:font-heading prose-headings:text-gray-800 prose-p:text-gray-600 prose-a:text-pink-600 prose-strong:text-gray-800">
+          <div className="prose prose-sage mx-auto max-w-3xl prose-headings:font-heading prose-headings:text-warm-800 prose-p:text-warm-600 prose-a:text-sage-600 prose-strong:text-warm-800">
             <h2>Introduction</h2>
             <p>
               {company.name} (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your

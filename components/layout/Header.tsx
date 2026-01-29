@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, Phone, X } from "lucide-react"
 
@@ -40,51 +41,19 @@ export function Header() {
           : "bg-white"
       )}
     >
-      {/* Top Bar - Rose Gold accent */}
-      <div className="bg-gradient-to-r from-pink-100 via-rose-50 to-pink-100">
-        <div className="container flex h-10 items-center justify-between text-sm">
-          <p className="hidden text-pink-700 md:block">
-            Welcome to {company.name}
-          </p>
-          <div className="flex items-center gap-6">
-            <a
-              href={`tel:${company.phone}`}
-              className="flex items-center gap-2 font-medium text-pink-700 transition-colors hover:text-pink-900"
-            >
-              <Phone className="h-4 w-4" />
-              {company.phoneFormatted}
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Header */}
       <div className="container">
-        <div className="flex h-20 items-center justify-between lg:h-24">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            {/* Logo mark - elegant flower/heart shape */}
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-pink-400 to-rose-500 lg:h-14 lg:w-14">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                className="h-7 w-7 text-white lg:h-8 lg:w-8"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path
-                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                  fill="currentColor"
-                />
-              </svg>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-script text-2xl text-pink-600 lg:text-3xl">
-                Avera Health
-              </span>
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-pink-400">
-                Group
-              </span>
+        <div className="flex h-20 items-center justify-between lg:h-28">
+          {/* Logo Only - Large */}
+          <Link href="/" className="flex items-center">
+            <div className="relative h-20 w-20 lg:h-32 lg:w-32">
+              <Image
+                src="/logo-averra.png"
+                alt="Averra Medical Group"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
           </Link>
 
@@ -97,22 +66,31 @@ export function Header() {
                 className={cn(
                   "relative px-4 py-2 text-sm font-medium transition-colors",
                   pathname === item.href
-                    ? "text-pink-600"
-                    : "text-gray-600 hover:text-pink-600"
+                    ? "text-sage-600"
+                    : "text-warm-600 hover:text-sage-600"
                 )}
               >
                 {item.name}
                 {pathname === item.href && (
-                  <span className="absolute bottom-0 left-1/2 h-0.5 w-8 -translate-x-1/2 rounded-full bg-gradient-to-r from-pink-400 to-rose-400" />
+                  <span className="absolute bottom-0 left-1/2 h-0.5 w-8 -translate-x-1/2 rounded-full bg-gradient-to-r from-sage-400 to-rose-400" />
                 )}
               </Link>
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="flex items-center gap-4">
+          {/* CTA Buttons - Phone + Book Online */}
+          <div className="flex items-center gap-3">
+            <a href={`tel:${company.phone}`} className="hidden sm:block">
+              <Button
+                variant="outline"
+                className="rounded-full border-2 border-sage-300 px-5 font-medium text-sage-700 transition-all hover:bg-sage-50"
+              >
+                <Phone className="mr-2 h-4 w-4" />
+                {company.phoneFormatted}
+              </Button>
+            </a>
             <Link href="/book" className="hidden sm:block">
-              <Button className="rounded-full bg-gradient-to-r from-pink-500 to-rose-500 px-6 font-medium text-white shadow-lg shadow-pink-200 transition-all hover:scale-105 hover:shadow-xl hover:shadow-pink-300">
+              <Button className="rounded-full bg-gradient-to-r from-sage-500 to-sage-600 px-6 font-medium text-white shadow-lg shadow-sage-200 transition-all hover:scale-105 hover:shadow-xl hover:shadow-sage-300">
                 Book Online
               </Button>
             </Link>
@@ -120,7 +98,7 @@ export function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-pink-50 text-pink-600 transition-colors hover:bg-pink-100 lg:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-sage-50 text-sage-600 transition-colors hover:bg-sage-100 lg:hidden"
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -141,22 +119,22 @@ export function Header() {
                   className={cn(
                     "rounded-lg px-4 py-3 text-lg font-medium transition-colors",
                     pathname === item.href
-                      ? "bg-pink-50 text-pink-600"
-                      : "text-gray-600 hover:bg-pink-50 hover:text-pink-600"
+                      ? "bg-sage-50 text-sage-600"
+                      : "text-warm-600 hover:bg-sage-50 hover:text-sage-600"
                   )}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="mt-4 border-t border-pink-100 pt-4">
+              <div className="mt-4 border-t border-sage-100 pt-4">
                 <Link href="/book" onClick={() => setIsOpen(false)}>
-                  <Button className="w-full rounded-full bg-gradient-to-r from-pink-500 to-rose-500 py-6 text-lg font-medium text-white">
+                  <Button className="w-full rounded-full bg-gradient-to-r from-sage-500 to-sage-600 py-6 text-lg font-medium text-white">
                     Book Online
                   </Button>
                 </Link>
                 <a
                   href={`tel:${company.phone}`}
-                  className="mt-4 flex items-center justify-center gap-2 py-3 text-lg font-medium text-pink-600"
+                  className="mt-4 flex items-center justify-center gap-2 py-3 text-lg font-medium text-sage-600"
                 >
                   <Phone className="h-5 w-5" />
                   {company.phoneFormatted}

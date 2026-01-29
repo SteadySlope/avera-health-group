@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import {
   Heart,
   CheckCircle,
@@ -64,30 +65,30 @@ export default function WomensHealthPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-pink-100 via-rose-50 to-pink-50 py-20 lg:py-28">
-        <div className="absolute left-0 top-0 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-200/30 blur-3xl" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-sage-50 via-cream-50 to-rose-50 py-20 lg:py-28">
+        <div className="absolute left-0 top-0 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-rose-200/30 blur-3xl" />
         <div className="container relative">
           <div className="grid gap-12 lg:grid-cols-2">
             <div className="flex flex-col justify-center">
               <Link
                 href="/services"
-                className="mb-4 inline-flex w-fit items-center text-sm text-pink-600 hover:text-pink-700"
+                className="mb-4 inline-flex w-fit items-center text-sm text-sage-600 hover:text-sage-700"
               >
                 <ArrowRight className="mr-1 h-4 w-4 rotate-180" />
                 Back to Services
               </Link>
-              <p className="mb-4 font-script text-2xl text-pink-500">Women&apos;s Health</p>
-              <h1 className="mb-6 font-heading text-5xl font-bold text-gray-800 md:text-6xl">
-                Care Designed <span className="text-pink-600">for You</span>
+              <p className="mb-4 font-script text-2xl text-rose-500">Women&apos;s Health</p>
+              <h1 className="mb-6 font-heading text-5xl font-bold text-warm-800 md:text-6xl">
+                Care Designed <span className="text-sage-600">for You</span>
               </h1>
-              <p className="mb-8 text-lg text-gray-600">
+              <p className="mb-8 text-lg text-warm-600">
                 Compassionate, comprehensive care for women at every stage of
                 life. From routine wellness to specialized gynecologic
                 services, we&apos;re here for you.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Link href="/book">
-                  <Button className="rounded-full bg-gradient-to-r from-pink-500 to-rose-500 px-8 py-6 text-lg font-medium shadow-lg shadow-pink-200 transition-all hover:scale-105">
+                  <Button className="rounded-full bg-gradient-to-r from-sage-500 to-sage-600 px-8 py-6 text-lg font-medium shadow-lg shadow-sage-200 transition-all hover:scale-105">
                     <Calendar className="mr-2 h-5 w-5" />
                     Book an Appointment
                   </Button>
@@ -95,7 +96,7 @@ export default function WomensHealthPage() {
                 <a href={`tel:${company.phone}`}>
                   <Button
                     variant="outline"
-                    className="rounded-full border-2 border-pink-300 px-8 py-6 text-lg text-pink-600 hover:bg-pink-50"
+                    className="rounded-full border-2 border-sage-300 px-8 py-6 text-lg text-sage-700 hover:bg-sage-50"
                   >
                     <Phone className="mr-2 h-5 w-5" />
                     {company.phoneFormatted}
@@ -104,10 +105,13 @@ export default function WomensHealthPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-gradient-to-br from-pink-100 to-rose-100 shadow-xl">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Heart className="h-32 w-32 text-pink-300" />
-                </div>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
+                <Image
+                  src="/averra-medical.png"
+                  alt="Women's Health at Averra Medical Group"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
@@ -118,8 +122,8 @@ export default function WomensHealthPage() {
       <section className="bg-white py-20 lg:py-28">
         <div className="container">
           <div className="mb-12 text-center">
-            <p className="mb-3 font-script text-2xl text-pink-500">What We Offer</p>
-            <h2 className="font-heading text-4xl font-bold text-gray-800">
+            <p className="mb-3 font-script text-2xl text-sage-600">What We Offer</p>
+            <h2 className="font-heading text-4xl font-bold text-warm-800">
               Women&apos;s Health Services
             </h2>
           </div>
@@ -127,13 +131,13 @@ export default function WomensHealthPage() {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="rounded-2xl bg-gradient-to-br from-pink-50 to-rose-50 p-6 shadow-lg transition-all hover:shadow-xl"
+                className="rounded-2xl bg-gradient-to-br from-sage-50 to-cream-50 p-6 shadow-lg transition-all hover:shadow-xl"
               >
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-400 to-rose-400">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sage-400 to-sage-500">
                   <service.icon className="h-7 w-7 text-white" />
                 </div>
-                <h3 className="mb-2 font-semibold text-gray-800">{service.title}</h3>
-                <p className="text-sm text-gray-600">{service.description}</p>
+                <h3 className="mb-2 font-semibold text-warm-800">{service.title}</h3>
+                <p className="text-sm text-warm-600">{service.description}</p>
               </div>
             ))}
           </div>
@@ -141,41 +145,41 @@ export default function WomensHealthPage() {
       </section>
 
       {/* Life Stages */}
-      <section className="bg-gradient-to-br from-pink-50 to-rose-50 py-20 lg:py-28">
+      <section className="bg-gradient-to-br from-cream-50 to-sage-50 py-20 lg:py-28">
         <div className="container">
           <div className="mb-12 text-center">
-            <p className="mb-3 font-script text-2xl text-pink-500">Every Stage of Life</p>
-            <h2 className="font-heading text-4xl font-bold text-gray-800">
+            <p className="mb-3 font-script text-2xl text-sage-600">Every Stage of Life</p>
+            <h2 className="font-heading text-4xl font-bold text-warm-800">
               Care That Grows With You
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             <div className="rounded-3xl bg-white p-8 text-center shadow-xl">
-              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-pink-100 to-rose-100">
-                <Sparkles className="h-10 w-10 text-pink-500" />
+              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-sage-100 to-cream-100">
+                <Sparkles className="h-10 w-10 text-sage-600" />
               </div>
-              <h3 className="mb-2 font-heading text-xl font-bold text-gray-800">Young Women</h3>
-              <p className="text-gray-600">
+              <h3 className="mb-2 font-heading text-xl font-bold text-warm-800">Young Women</h3>
+              <p className="text-warm-600">
                 Reproductive health education, contraception counseling, and
                 establishing healthy habits for life.
               </p>
             </div>
             <div className="rounded-3xl bg-white p-8 text-center shadow-xl">
-              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-pink-100 to-rose-100">
-                <Baby className="h-10 w-10 text-pink-500" />
+              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-rose-100 to-cream-100">
+                <Baby className="h-10 w-10 text-rose-500" />
               </div>
-              <h3 className="mb-2 font-heading text-xl font-bold text-gray-800">Reproductive Years</h3>
-              <p className="text-gray-600">
+              <h3 className="mb-2 font-heading text-xl font-bold text-warm-800">Reproductive Years</h3>
+              <p className="text-warm-600">
                 Fertility support, preconception counseling, and comprehensive
                 gynecologic care.
               </p>
             </div>
             <div className="rounded-3xl bg-white p-8 text-center shadow-xl">
-              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-pink-100 to-rose-100">
-                <Flower2 className="h-10 w-10 text-pink-500" />
+              <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-sage-100 to-cream-100">
+                <Flower2 className="h-10 w-10 text-sage-600" />
               </div>
-              <h3 className="mb-2 font-heading text-xl font-bold text-gray-800">Menopause & Beyond</h3>
-              <p className="text-gray-600">
+              <h3 className="mb-2 font-heading text-xl font-bold text-warm-800">Menopause & Beyond</h3>
+              <p className="text-warm-600">
                 Menopause management, bone health, and continued wellness
                 support.
               </p>
@@ -188,14 +192,14 @@ export default function WomensHealthPage() {
       <section className="bg-white py-20 lg:py-28">
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-pink-100 px-5 py-2 text-sm text-pink-700">
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-rose-100 px-5 py-2 text-sm text-rose-700">
               <Baby className="h-4 w-4" />
               Coming Soon
             </div>
-            <h2 className="mb-6 font-heading text-4xl font-bold text-gray-800">
+            <h2 className="mb-6 font-heading text-4xl font-bold text-warm-800">
               Obstetrical Care
             </h2>
-            <p className="mb-8 text-gray-600">
+            <p className="mb-8 text-warm-600">
               As we grow, we plan to expand into obstetrical care to support
               women through pregnancy and every stage of life. Stay tuned for
               updates on our prenatal and maternity services.
@@ -203,7 +207,7 @@ export default function WomensHealthPage() {
             <Link href="/contact">
               <Button
                 variant="outline"
-                className="rounded-full border-2 border-pink-300 px-8 py-6 text-pink-600 hover:bg-pink-50"
+                className="rounded-full border-2 border-sage-300 px-8 py-6 text-sage-700 hover:bg-sage-50"
               >
                 Contact Us to Learn More
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -214,13 +218,13 @@ export default function WomensHealthPage() {
       </section>
 
       {/* What to Expect */}
-      <section className="bg-gradient-to-r from-pink-500 via-rose-500 to-pink-500 py-20 text-white lg:py-28">
+      <section className="bg-gradient-to-r from-sage-500 via-sage-600 to-sage-500 py-20 text-white lg:py-28">
         <div className="container">
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
-              <p className="mb-3 font-script text-2xl text-pink-100">Your Visit</p>
+              <p className="mb-3 font-script text-2xl text-sage-100">Your Visit</p>
               <h2 className="mb-6 font-heading text-4xl font-bold">What to Expect</h2>
-              <p className="text-pink-100">
+              <p className="text-sage-100">
                 We believe every woman deserves to feel heard, respected, and
                 empowered in her healthcare decisions. Here&apos;s what makes our
                 approach different:
@@ -252,16 +256,16 @@ export default function WomensHealthPage() {
       <section className="bg-white py-20 lg:py-28">
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 font-heading text-4xl font-bold text-gray-800">
+            <h2 className="mb-6 font-heading text-4xl font-bold text-warm-800">
               Your Health, Your Way
             </h2>
-            <p className="mb-10 text-gray-600">
+            <p className="mb-10 text-warm-600">
               Ready to experience women&apos;s healthcare that puts you first?
               Schedule a consultation today.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link href="/book">
-                <Button className="rounded-full bg-gradient-to-r from-pink-500 to-rose-500 px-10 py-6 text-lg font-medium shadow-lg shadow-pink-200 transition-all hover:scale-105">
+                <Button className="rounded-full bg-gradient-to-r from-sage-500 to-sage-600 px-10 py-6 text-lg font-medium shadow-lg shadow-sage-200 transition-all hover:scale-105">
                   <Calendar className="mr-2 h-5 w-5" />
                   Book a Consultation
                 </Button>
@@ -269,7 +273,7 @@ export default function WomensHealthPage() {
               <Link href="/membership">
                 <Button
                   variant="outline"
-                  className="rounded-full border-2 border-pink-300 px-10 py-6 text-lg text-pink-600 hover:bg-pink-50"
+                  className="rounded-full border-2 border-sage-300 px-10 py-6 text-lg text-sage-700 hover:bg-sage-50"
                 >
                   Learn About Membership
                 </Button>

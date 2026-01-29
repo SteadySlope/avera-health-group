@@ -71,7 +71,7 @@ const faqCategories = [
       },
       {
         q: "How long are appointments?",
-        a: "Initial consultations are typically 45-60 minutes. Follow-up visits are usually 30-60 minutes—much longer than the typical 10-15 minute visit at traditional practices.",
+        a: "Initial consultations are typically 45-60 minutes. Follow-up visits are usually 30-60 minutes -much longer than the typical 10-15 minute visit at traditional practices.",
       },
       {
         q: "Can I really text my doctor?",
@@ -131,15 +131,15 @@ export default function FAQsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-pink-100 via-rose-50 to-pink-50 py-20 lg:py-28">
-        <div className="absolute right-0 top-0 h-96 w-96 translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-200/30 blur-3xl" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-sage-50 via-cream-50 to-rose-50 py-20 lg:py-28">
+        <div className="absolute right-0 top-0 h-96 w-96 translate-x-1/2 -translate-y-1/2 rounded-full bg-sage-200/30 blur-3xl" />
         <div className="container relative">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-4 font-script text-2xl text-pink-500">FAQs</p>
-            <h1 className="mb-6 font-heading text-5xl font-bold text-gray-800 md:text-6xl">
-              Frequently Asked <span className="text-pink-600">Questions</span>
+            <p className="mb-4 font-script text-2xl text-sage-600">FAQs</p>
+            <h1 className="mb-6 font-heading text-5xl font-bold text-warm-800 md:text-6xl">
+              Frequently Asked <span className="text-sage-600">Questions</span>
             </h1>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-warm-600">
               Find answers to common questions about our practice, Direct
               Patient Care, and what to expect as a patient.
             </p>
@@ -153,7 +153,7 @@ export default function FAQsPage() {
           <div className="mx-auto max-w-3xl">
             {faqCategories.map((category, categoryIndex) => (
               <div key={categoryIndex} className="mb-12">
-                <h2 className="mb-6 font-heading text-2xl font-bold text-pink-600">
+                <h2 className="mb-6 font-heading text-2xl font-bold text-sage-600">
                   {category.title}
                 </h2>
                 <Accordion type="single" collapsible className="space-y-4">
@@ -161,12 +161,12 @@ export default function FAQsPage() {
                     <AccordionItem
                       key={faqIndex}
                       value={`${categoryIndex}-${faqIndex}`}
-                      className="rounded-2xl border-2 border-pink-100 bg-gradient-to-br from-pink-50 to-rose-50 px-6"
+                      className="rounded-2xl border-2 border-sage-100 bg-gradient-to-br from-sage-50 to-cream-50 px-6"
                     >
-                      <AccordionTrigger className="text-left text-gray-800 hover:no-underline">
+                      <AccordionTrigger className="text-left text-warm-800 hover:no-underline">
                         {faq.q}
                       </AccordionTrigger>
-                      <AccordionContent className="text-gray-600">
+                      <AccordionContent className="text-warm-600">
                         {faq.a}
                       </AccordionContent>
                     </AccordionItem>
@@ -179,13 +179,13 @@ export default function FAQsPage() {
       </section>
 
       {/* Still Have Questions */}
-      <section className="bg-gradient-to-br from-pink-50 to-rose-50 py-20 lg:py-28">
+      <section className="bg-gradient-to-br from-cream-50 to-sage-50 py-20 lg:py-28">
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 font-heading text-4xl font-bold text-gray-800">
+            <h2 className="mb-6 font-heading text-4xl font-bold text-warm-800">
               Still Have Questions?
             </h2>
-            <p className="mb-10 text-gray-600">
+            <p className="mb-10 text-warm-600">
               We&apos;re here to help. Contact us directly or schedule a
               consultation to learn more about our practice.
             </p>
@@ -193,14 +193,14 @@ export default function FAQsPage() {
               <Link href="/contact">
                 <Button
                   variant="outline"
-                  className="rounded-full border-2 border-pink-300 px-8 py-6 text-pink-600 hover:bg-pink-50"
+                  className="rounded-full border-2 border-sage-300 px-8 py-6 text-sage-700 hover:bg-sage-50"
                 >
                   Contact Us
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
               <Link href="/book">
-                <Button className="rounded-full bg-gradient-to-r from-pink-500 to-rose-500 px-8 py-6 font-medium shadow-lg shadow-pink-200 transition-all hover:scale-105">
+                <Button className="rounded-full bg-gradient-to-r from-sage-500 to-sage-600 px-8 py-6 font-medium shadow-lg shadow-sage-200 transition-all hover:scale-105">
                   <Calendar className="mr-2 h-5 w-5" />
                   Book a Consultation
                 </Button>
