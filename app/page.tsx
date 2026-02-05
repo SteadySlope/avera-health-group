@@ -14,6 +14,7 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { company } from "@/lib/company"
+import { HighlightedServices } from "@/components/sections/HighlightedServices"
 
 export default function HomePage() {
   return (
@@ -147,7 +148,7 @@ export default function HomePage() {
                   <p className="mb-6 text-warm-600">{service.description}</p>
 
                   <ul className="mb-6 grid grid-cols-2 gap-2">
-                    {service.features.slice(0, 4).map((feature, index) => (
+                    {service.features.slice(0, 6).map((feature, index) => (
                       <li
                         key={index}
                         className="flex items-center gap-2 text-sm text-warm-600"
@@ -173,6 +174,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Highlighted Services */}
+      <HighlightedServices />
 
       {/* Why DPC Section */}
       <section className="bg-gradient-to-r from-sage-500 via-sage-600 to-sage-500 py-20 text-white lg:py-28">

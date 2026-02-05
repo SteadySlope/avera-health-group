@@ -59,6 +59,12 @@ const services = [
     description:
       "Screening and support for anxiety, depression, and perinatal mood disorders.",
   },
+  {
+    icon: Baby,
+    title: "Preconception Counseling",
+    description:
+      "Guidance and support to help you prepare for a healthy pregnancy, including health assessments and wellness planning.",
+  },
 ]
 
 export default function WomensHealthPage() {
@@ -214,6 +220,21 @@ export default function WomensHealthPage() {
               </Button>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Additional Services Link */}
+      <section className="bg-white py-12">
+        <div className="container text-center">
+          <Link href="/services/additional">
+            <Button
+              variant="outline"
+              className="rounded-full border-2 border-sage-300 px-8 py-6 text-lg text-sage-700 hover:bg-sage-50"
+            >
+              View Additional In-Office Procedures
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </section>
 

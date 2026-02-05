@@ -7,6 +7,7 @@ const footerLinks = {
   services: [
     { name: "Family Medicine", href: "/services/family-medicine" },
     { name: "Women's Health", href: "/services/womens-health" },
+    { name: "Additional Services", href: "/services/additional" },
     { name: "Membership", href: "/membership" },
   ],
   quickLinks: [

@@ -47,6 +47,9 @@ export const company = {
         "Acute illness treatment",
         "Immunizations",
         "Health education",
+        "Telehealth visits",
+        "Weight loss & lifestyle management",
+        "Home visits (Newton & Rockdale Counties)",
       ],
     },
     {
@@ -62,15 +65,78 @@ export const company = {
         "Menopause management",
         "Breast health",
         "Wellness education",
+        "Preconception counseling",
       ],
     },
   ],
+
+  // Additional in-office procedures and specialized services
+  additionalServices: {
+    familyMedicine: [
+      "Abscess I&D",
+      "Biopsy Punch/Shave",
+      "Circumcision",
+      "Cyst Aspiration",
+      "Endometrial Biopsy",
+      "Excise Lesion",
+      "Foreign Body Ear",
+      "Ganglion Cyst",
+      "Hemorrhoid I&D",
+      "Ingrown Toenail",
+      "Joint Aspiration",
+      "Joint Injection",
+      "Laceration Repair",
+      "Skin Tags",
+      "Joint Dislocation Reduction",
+    ],
+    maleSpecific: [
+      "Hair loss treatment",
+      "Testosterone replacement therapy",
+    ],
+    womenSpecific: [
+      "IUD Insertion/Removal",
+      "Nexplanon Insertion/Removal",
+      "Pap Smear",
+    ],
+  },
+
+  // Home visits
+  homeVisits: {
+    frequency: "Twice per year",
+    areas: "Newton & Rockdale Counties",
+    includedWith: "Membership",
+  },
 
   // Membership/DPC info
   membership: {
     title: "Direct Patient Care",
     tagline: "Healthcare on Your Terms",
-    description: "Instead of billing insurance, we offer a simple monthly membership that allows for longer appointments, easier access to your provider, and more time to focus on your individual health needs.",
+    description: "We offer two ways to receive care: Fee for Service for those who prefer traditional visit-based billing, and our Membership model for those who want enhanced access, home visits, and telehealth included.",
+    models: [
+      {
+        name: "Fee for Service",
+        description: "Traditional visit-based care with transparent pricing. Pay per visit without a monthly commitment.",
+        features: [
+          "Office visits at transparent rates",
+          "Same-day appointments when available",
+          "Access to all in-office procedures",
+          "Lab and imaging coordination",
+        ],
+      },
+      {
+        name: "Membership",
+        description: "A monthly membership that includes unlimited visits, telehealth, home visits, and direct provider access.",
+        features: [
+          "Unlimited office visits",
+          "Telehealth visits included",
+          "Home visits (2x/year, Newton & Rockdale Counties)",
+          "Direct provider access (text, call, email)",
+          "Same-day appointments",
+          "No copays",
+        ],
+        contractTerms: "Year contract, dissolvable with 30-day written notice by either party",
+      },
+    ],
     benefits: [
       {
         title: "Longer Appointments",
@@ -95,6 +161,14 @@ export const company = {
       {
         title: "Personalized Care",
         description: "Care plans tailored to your unique health needs",
+      },
+      {
+        title: "Telehealth Visits",
+        description: "Virtual visits from the comfort of your home",
+      },
+      {
+        title: "Home Visits",
+        description: "Twice yearly home visits for members in Newton & Rockdale Counties",
       },
     ],
   },

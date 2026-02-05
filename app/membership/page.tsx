@@ -10,13 +10,16 @@ import {
   MessageCircle,
   DollarSign,
   Heart,
+  Star,
+  Video,
+  Home,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { company } from "@/lib/company"
 
 export const metadata: Metadata = {
   title: "Membership",
-  description: `Learn about our Direct Patient Care membership model at ${company.name}. Transparent pricing, longer appointments, and personalized healthcare.`,
+  description: `Learn about our care models at ${company.name}. Choose between Fee for Service or Membership for transparent pricing, longer appointments, and personalized healthcare.`,
 }
 
 const comparisonItems = [
@@ -53,6 +56,9 @@ const comparisonItems = [
 ]
 
 export default function MembershipPage() {
+  const feeForService = company.membership.models[0]
+  const membership = company.membership.models[1]
+
   return (
     <>
       {/* Hero Section */}
@@ -72,70 +78,89 @@ export default function MembershipPage() {
         </div>
       </section>
 
-      {/* What is DPC */}
+      {/* Care Models - Side by Side */}
       <section className="bg-white py-20 lg:py-28">
         <div className="container">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-            <div>
-              <p className="mb-3 font-script text-2xl text-sage-600">What is DPC?</p>
-              <h2 className="mb-6 font-heading text-4xl font-bold text-warm-800">
-                A Better Way to Healthcare
-              </h2>
-              <p className="mb-6 text-warm-600">
-                Direct Patient Care (DPC) is a healthcare model that removes
-                insurance from the doctor-patient relationship for primary care
-                services. Instead of billing insurance for each visit, you pay a
-                simple monthly membership fee that covers all your primary care
-                needs.
-              </p>
-              <p className="mb-6 text-warm-600">
-                This allows us to spend more time with you, offer same-day
-                appointments, and focus on prevention rather than just treating
-                illness.
-              </p>
-              <div className="rounded-2xl border-l-4 border-sage-400 bg-gradient-to-r from-sage-50 to-cream-50 p-6">
-                <p className="font-semibold text-warm-800">Think of it like Netflix for healthcare:</p>
-                <p className="mt-2 text-warm-600">
-                  One monthly fee gives you unlimited access to your primary care
-                  provider, without copays or surprise bills.
-                </p>
-              </div>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                {
-                  icon: Clock,
-                  title: "More Time",
-                  description: "30-60 minute appointments",
-                },
-                {
-                  icon: MessageCircle,
-                  title: "Direct Access",
-                  description: "Text, call, or email your provider",
-                },
-                {
-                  icon: DollarSign,
-                  title: "Transparent Pricing",
-                  description: "Know exactly what you pay",
-                },
-                {
-                  icon: Heart,
-                  title: "Personal Care",
-                  description: "Care tailored to you",
-                },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="rounded-2xl bg-gradient-to-br from-sage-50 to-cream-50 p-6 shadow-lg"
-                >
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sage-400 to-sage-500">
-                    <item.icon className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="mb-1 font-semibold text-warm-800">{item.title}</h3>
-                  <p className="text-sm text-warm-600">{item.description}</p>
+          <div className="mb-12 text-center">
+            <p className="mb-3 font-script text-2xl text-sage-600">Choose Your Care Model</p>
+            <h2 className="mb-6 font-heading text-4xl font-bold text-warm-800">
+              Two Ways to Receive Care
+            </h2>
+            <p className="mx-auto max-w-2xl text-warm-600">
+              Whether you prefer traditional visit-based care or the enhanced
+              access of a membership, we have an option that fits your needs.
+            </p>
+          </div>
+
+          <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
+            {/* Fee for Service Card */}
+            <div className="rounded-3xl border-2 border-sage-100 bg-gradient-to-br from-sage-50 to-cream-50 p-8 shadow-lg">
+              <div className="mb-6">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sage-300 to-sage-400">
+                  <DollarSign className="h-7 w-7 text-white" />
                 </div>
-              ))}
+                <h3 className="mb-2 font-heading text-2xl font-bold text-warm-800">
+                  {feeForService.name}
+                </h3>
+                <p className="text-warm-600">{feeForService.description}</p>
+              </div>
+              <ul className="mb-8 space-y-3">
+                {feeForService.features.map((feature, index) => (
+                  <li key={index} className="flex items-center gap-2 text-sm text-warm-700">
+                    <CheckCircle className="h-4 w-4 shrink-0 text-sage-500" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/book">
+                <Button
+                  variant="outline"
+                  className="w-full rounded-full border-2 border-sage-300 py-6 text-lg text-sage-700 hover:bg-sage-50"
+                >
+                  Schedule a Visit
+                </Button>
+              </Link>
             </div>
+
+            {/* Membership Card - Featured */}
+            <div className="relative rounded-3xl border-2 border-sage-400 bg-gradient-to-br from-sage-50 to-cream-50 p-8 shadow-xl">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-sage-500 to-sage-600 px-4 py-1.5 text-sm font-medium text-white">
+                  <Star className="h-4 w-4" />
+                  Recommended
+                </span>
+              </div>
+              <div className="mb-6">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sage-400 to-sage-500">
+                  <Heart className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="mb-2 font-heading text-2xl font-bold text-warm-800">
+                  {membership.name}
+                </h3>
+                <p className="text-warm-600">{membership.description}</p>
+              </div>
+              <ul className="mb-8 space-y-3">
+                {membership.features.map((feature, index) => (
+                  <li key={index} className="flex items-center gap-2 text-sm text-warm-700">
+                    <CheckCircle className="h-4 w-4 shrink-0 text-sage-500" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/book">
+                <Button className="w-full rounded-full bg-gradient-to-r from-sage-500 to-sage-600 py-6 text-lg font-medium shadow-lg shadow-sage-200">
+                  Become a Member
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Contract Terms */}
+          <div className="mx-auto mt-8 max-w-2xl rounded-2xl border-l-4 border-sage-400 bg-gradient-to-r from-sage-50 to-cream-50 p-6 text-center">
+            <p className="text-sm text-warm-600">
+              <span className="font-semibold text-warm-800">Membership Terms:</span>{" "}
+              {membership.contractTerms}
+            </p>
           </div>
         </div>
       </section>
@@ -149,10 +174,16 @@ export default function MembershipPage() {
               What&apos;s Included
             </h2>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {company.membership.benefits.map((benefit, index) => (
               <div key={index} className="rounded-2xl bg-white p-6 shadow-lg">
-                <CheckCircle className="mb-4 h-8 w-8 text-sage-500" />
+                {benefit.title === "Telehealth Visits" ? (
+                  <Video className="mb-4 h-8 w-8 text-sage-500" />
+                ) : benefit.title === "Home Visits" ? (
+                  <Home className="mb-4 h-8 w-8 text-sage-500" />
+                ) : (
+                  <CheckCircle className="mb-4 h-8 w-8 text-sage-500" />
+                )}
                 <h3 className="mb-2 font-semibold text-warm-800">{benefit.title}</h3>
                 <p className="text-sm text-warm-600">{benefit.description}</p>
               </div>
@@ -199,38 +230,66 @@ export default function MembershipPage() {
       {/* Pricing */}
       <section className="bg-gradient-to-r from-sage-500 via-sage-600 to-sage-500 py-20 text-white lg:py-28">
         <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-4xl text-center">
             <p className="mb-3 font-script text-2xl text-sage-100">Simple, Transparent Pricing</p>
-            <h2 className="mb-6 font-heading text-4xl font-bold">Membership Plans</h2>
+            <h2 className="mb-6 font-heading text-4xl font-bold">Care Plans</h2>
             <p className="mb-10 text-sage-100">
-              Contact us for detailed pricing information. We offer affordable
-              monthly membership options designed to fit your budget.
+              Contact us for detailed pricing information. We offer options to
+              fit your budget and healthcare needs.
             </p>
-            <div className="mx-auto max-w-md rounded-3xl bg-white p-8 text-warm-800 shadow-2xl">
-              <h3 className="mb-4 font-heading text-2xl font-bold">Monthly Membership</h3>
-              <div className="mb-6 text-center">
-                <p className="text-4xl font-bold text-sage-600">Contact Us</p>
-                <p className="text-sm text-warm-500">for pricing details</p>
+            <div className="grid gap-8 md:grid-cols-2">
+              {/* Fee for Service Pricing */}
+              <div className="rounded-3xl bg-white p-8 text-warm-800 shadow-2xl">
+                <h3 className="mb-4 font-heading text-2xl font-bold">Fee for Service</h3>
+                <div className="mb-6 text-center">
+                  <p className="text-4xl font-bold text-sage-600">Contact Us</p>
+                  <p className="text-sm text-warm-500">for pricing details</p>
+                </div>
+                <ul className="mb-8 space-y-3">
+                  {feeForService.features.map((feature, index) => (
+                    <li key={index} className="flex items-center gap-2 text-sm">
+                      <CheckCircle className="h-4 w-4 text-sage-500" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/book">
+                  <Button
+                    variant="outline"
+                    className="w-full rounded-full border-2 border-sage-300 py-6 text-lg font-medium text-sage-700"
+                  >
+                    Schedule a Visit
+                  </Button>
+                </Link>
               </div>
-              <ul className="mb-8 space-y-3">
-                {[
-                  "Unlimited office visits",
-                  "Same-day appointments",
-                  "Direct provider access",
-                  "No copays",
-                  "Transparent pricing",
-                ].map((feature, index) => (
-                  <li key={index} className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-sage-500" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/book">
-                <Button className="w-full rounded-full bg-gradient-to-r from-sage-500 to-sage-600 py-6 text-lg font-medium shadow-lg shadow-sage-200">
-                  Schedule a Consultation
-                </Button>
-              </Link>
+
+              {/* Membership Pricing */}
+              <div className="relative rounded-3xl bg-white p-8 text-warm-800 shadow-2xl ring-2 ring-sage-400">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-sage-500 to-sage-600 px-4 py-1.5 text-sm font-medium text-white">
+                    <Star className="h-4 w-4" />
+                    Best Value
+                  </span>
+                </div>
+                <h3 className="mb-4 font-heading text-2xl font-bold">Monthly Membership</h3>
+                <div className="mb-6 text-center">
+                  <p className="text-4xl font-bold text-sage-600">Contact Us</p>
+                  <p className="text-sm text-warm-500">for pricing details</p>
+                </div>
+                <ul className="mb-8 space-y-3">
+                  {membership.features.map((feature, index) => (
+                    <li key={index} className="flex items-center gap-2 text-sm">
+                      <CheckCircle className="h-4 w-4 text-sage-500" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/book">
+                  <Button className="w-full rounded-full bg-gradient-to-r from-sage-500 to-sage-600 py-6 text-lg font-medium shadow-lg shadow-sage-200">
+                    Become a Member
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -249,6 +308,10 @@ export default function MembershipPage() {
             <div className="space-y-4">
               {[
                 {
+                  q: "Do I have to become a member?",
+                  a: "No, membership is optional. We offer a Fee for Service option for patients who prefer traditional visit-based care with transparent pricing. However, membership provides enhanced access including telehealth, home visits, and direct provider communication.",
+                },
+                {
                   q: "Do I still need insurance?",
                   a: "DPC covers your primary care needs, but you may still want insurance for hospitalizations, specialists, and emergencies. Many members pair DPC with a high-deductible health plan.",
                 },
@@ -258,7 +321,7 @@ export default function MembershipPage() {
                 },
                 {
                   q: "Can I cancel my membership?",
-                  a: "Yes, memberships are month-to-month with no long-term contracts required.",
+                  a: "Membership is a year contract, dissolvable with 30-day written notice by either party. This ensures continuity of care while giving both you and your provider flexibility.",
                 },
               ].map((item, index) => (
                 <div
@@ -293,8 +356,8 @@ export default function MembershipPage() {
               Ready to Experience Healthcare Differently?
             </h2>
             <p className="mb-10 text-warm-600">
-              Schedule a free consultation to learn more about our membership
-              and see if DPC is right for you.
+              Schedule a free consultation to learn more about our care options
+              and find the right fit for you.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link href="/book">

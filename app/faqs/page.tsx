@@ -49,8 +49,12 @@ const faqCategories = [
         a: "Your monthly membership covers all primary care services. Some items like labs, imaging, medications, and specialist referrals may have additional costs, but we work to get you the best prices and are transparent about all costs upfront.",
       },
       {
+        q: "Do I have to become a member?",
+        a: "No, membership is optional. We offer a Fee for Service option for patients who prefer traditional visit-based care with transparent pricing. However, membership provides enhanced access including telehealth, home visits, and direct provider communication.",
+      },
+      {
         q: "Can I cancel my membership?",
-        a: "Yes, memberships are month-to-month with no long-term contracts. We ask for 30 days' notice if you decide to cancel.",
+        a: "Membership is a year contract, dissolvable with 30-day written notice by either party. This ensures continuity of care while giving both you and your provider flexibility.",
       },
       {
         q: "Do you offer family plans?",
@@ -96,7 +100,11 @@ const faqCategories = [
       },
       {
         q: "Do you offer telehealth visits?",
-        a: "Yes, we offer virtual visits when appropriate. Many concerns can be addressed through telehealth, saving you time while still providing quality care.",
+        a: "Yes, we offer virtual visits when appropriate. Many concerns can be addressed through telehealth, saving you time while still providing quality care. Telehealth visits are included with membership, and also available to Fee for Service patients.",
+      },
+      {
+        q: "Do you offer home visits?",
+        a: "Yes, members receive two home visits per year within Newton and Rockdale Counties. Home visits are included as part of the membership model at no additional cost.",
       },
       {
         q: "What about after-hours emergencies?",

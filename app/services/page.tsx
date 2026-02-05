@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
-import { Heart, Users, CheckCircle, ArrowRight, Calendar, Phone } from "lucide-react"
+import { Heart, Users, CheckCircle, ArrowRight, Calendar, Phone, Stethoscope } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { company } from "@/lib/company"
 
@@ -84,6 +84,30 @@ export default function ServicesPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Services */}
+      <section className="bg-gradient-to-br from-sage-50 to-cream-50 py-16">
+        <div className="container">
+          <div className="mx-auto max-w-3xl rounded-3xl bg-white p-8 text-center shadow-xl md:p-12">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-sage-400 to-sage-500">
+              <Stethoscope className="h-8 w-8 text-white" />
+            </div>
+            <h2 className="mb-4 font-heading text-2xl font-bold text-warm-800">
+              Additional In-Office Procedures
+            </h2>
+            <p className="mb-6 text-warm-600">
+              We also offer a wide range of in-office procedures and specialized
+              services, including men&apos;s and women&apos;s health-specific treatments.
+            </p>
+            <Link href="/services/additional">
+              <Button className="rounded-full bg-gradient-to-r from-sage-500 to-sage-600 px-8 py-6 font-medium shadow-lg shadow-sage-200 transition-all hover:scale-105">
+                View All Additional Services
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
