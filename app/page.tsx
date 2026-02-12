@@ -32,8 +32,8 @@ export default function HomePage() {
               <p className="mb-4 font-script text-2xl text-sage-600">
                 Welcome to
               </p>
-              <h1 className="mb-6 font-heading text-5xl font-bold leading-tight text-warm-800 md:text-6xl lg:text-7xl">
-                <span className="text-sage-600">Averra</span> Medical
+              <h1 className="mb-6 font-heading text-5xl font-bold leading-tight text-sage-600 md:text-6xl lg:text-7xl">
+                Averra Medical
                 <br />
                 Group
               </h1>

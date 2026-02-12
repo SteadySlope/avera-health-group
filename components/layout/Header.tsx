@@ -46,7 +46,7 @@ export function Header() {
         <div className="flex h-20 items-center justify-between lg:h-28">
           {/* Logo Only - Large */}
           <Link href="/" className="flex items-center">
-            <div className="relative h-20 w-20 lg:h-32 lg:w-32">
+            <div className="relative h-28 w-28 lg:h-40 lg:w-40">
               <Image
                 src="/logo-averra.png"
                 alt="Averra Medical Group"
