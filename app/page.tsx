@@ -285,7 +285,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials Placeholder */}
+      {/* Testimonials */}
       <section className="bg-gradient-to-br from-cream-50 to-sage-50 py-20 lg:py-28">
         <div className="container">
           <div className="mb-16 text-center">
@@ -297,10 +297,47 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            {[1, 2, 3].map((i) => (
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                quote:
+                  "Dr. Dill is the most caring and attentive doctor I’ve had. She is genuine, asks thoughtful questions, and takes the time to really understand what is going on instead of rushing through an appointment. I also appreciate that she is always learning new things and staying up to date on the latest medical stuff.",
+                name: "Curtis",
+                initial: "C",
+              },
+              {
+                quote:
+                  "Dr. Dill is honest about what needs to be done, but also explains options in considering my feelings and beliefs instead of just pushing one answer. She makes me feel heard, understood, and cared for each visit. I would 1000% recommend her to anyone looking for primary.",
+                name: "Brady",
+                initial: "B",
+              },
+              {
+                quote:
+                  "I highly recommend Dr. Heather Dill! It’s immediately clear that you are valued. Her responsiveness and care show that your well-being is her top priority. She is incredibly approachable, making it easy to discuss any concerns, whether you’re an adult or bringing in your children. It’s easy to see that she genuinely cares about her patients’ well-being. It’s rare to find a doctor who balances professionalism with such a personal touch.",
+                name: "Emma",
+                initial: "E",
+              },
+              {
+                quote:
+                  "The trust Heather establishes with her patients by listening to them well and answering them with both knowledge and kindness allowed my family to feel comfortable with discussing all aspects of health with her. She is efficient in her response time, considerate in her approach, and reliable to respond to us for any medical concern, big or small.",
+                name: "Meghan",
+                initial: "M",
+              },
+              {
+                quote:
+                  "Dr. Dill is seriously one of the best doctors. She takes time to listen and doesn’t control the conversation. I truly feel heard and my concerns are always addressed.",
+                name: "Hillary",
+                initial: "H",
+              },
+              {
+                quote:
+                  "When Dr. Dill walks into the exam room, it’s like you are her only patient and priority. That’s why I’ve recommended her to all my family and friends.",
+                name: "Jason",
+                initial: "J",
+              },
+            ].map((testimonial) => (
               <div
-                key={i}
+                key={testimonial.name}
                 className="relative rounded-3xl bg-white p-8 shadow-lg"
               >
                 <Quote className="absolute right-6 top-6 h-10 w-10 text-sage-100" />
@@ -313,15 +350,18 @@ export default function HomePage() {
                   ))}
                 </div>
                 <p className="mb-6 italic text-warm-600">
-                  &quot;Testimonial placeholder - Patient reviews will be added
-                  here once available.&quot;
+                  &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-sage-200 to-sage-300">
-                    <span className="font-semibold text-sage-700">P{i}</span>
+                    <span className="font-semibold text-sage-700">
+                      {testimonial.initial}
+                    </span>
                   </div>
                   <div>
-                    <p className="font-semibold text-warm-800">Patient Name</p>
+                    <p className="font-semibold text-warm-800">
+                      {testimonial.name}
+                    </p>
                     <p className="text-sm text-warm-500">Verified Patient</p>
                   </div>
                 </div>
