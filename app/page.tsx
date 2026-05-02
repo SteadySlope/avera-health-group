@@ -386,6 +386,19 @@ export default function HomePage() {
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-sage-100">
+                    <MapPin className="h-6 w-6 text-sage-600" />
+                  </div>
+                  <div>
+                    <h3 className="mb-1 font-semibold text-warm-800">Address</h3>
+                    <p className="text-warm-600">{company.address.street}</p>
+                    <p className="text-warm-600">
+                      {company.address.city}, {company.address.state} {company.address.zip}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-sage-100">
                     <Clock className="h-6 w-6 text-sage-600" />
                   </div>
                   <div>
@@ -439,10 +452,10 @@ export default function HomePage() {
                     <MapPin className="h-8 w-8 text-sage-600" />
                   </div>
                   <p className="font-medium text-sage-700">
-                    Map Coming Soon
+                    {company.address.full}
                   </p>
                   <p className="text-sm text-sage-600">
-                    Address to be confirmed
+                    Map coming soon
                   </p>
                 </div>
               </div>

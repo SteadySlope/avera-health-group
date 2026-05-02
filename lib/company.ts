@@ -9,13 +9,13 @@ export const company = {
   serviceAreas: ["Newton County", "Rockdale County"],
   serviceAreasText: "Newton & Rockdale Counties",
 
-  // Address (placeholder - update when available)
+  // Address (temporary)
   address: {
-    street: "",
+    street: "2180 Elm St NE",
     city: "Covington",
     state: "GA",
-    zip: "",
-    full: "Covington, GA",
+    zip: "30015",
+    full: "2180 Elm St NE, Covington, GA 30015",
   },
 
   // Hours

@@ -59,9 +59,10 @@ export default function ContactPage() {
                   },
                   {
                     icon: MapPin,
-                    label: "Service Area",
-                    value: company.serviceAreasText,
-                    desc: "Address coming soon",
+                    label: "Address",
+                    value: company.address.full,
+                    href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(company.address.full)}`,
+                    desc: `Serving ${company.serviceAreasText}`,
                   },
                 ].map((item, index) => (
                   <div
@@ -217,8 +218,8 @@ export default function ContactPage() {
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-lg">
                   <MapPin className="h-8 w-8 text-sage-600" />
                 </div>
-                <p className="font-medium text-sage-700">Map Coming Soon</p>
-                <p className="text-sm text-sage-600">Address to be confirmed</p>
+                <p className="font-medium text-sage-700">{company.address.full}</p>
+                <p className="text-sm text-sage-600">Map coming soon</p>
               </div>
             </div>
           </div>
