@@ -11,11 +11,11 @@ export const company = {
 
   // Address (temporary)
   address: {
-    street: "2180 Elm St NE",
+    street: "2180 Elm St NE, Suite 125",
     city: "Covington",
     state: "GA",
-    zip: "30015",
-    full: "2180 Elm St NE, Covington, GA 30015",
+    zip: "30014",
+    full: "2180 Elm St NE, Suite 125, Covington, GA 30014",
   },
 
   // Hours
